@@ -37,13 +37,30 @@ The pipeline follows a standard ETL (Extract, Transform, Load) pattern enhanced 
 5. **Retrieval:** User queries are embedded and matched using k-NN (k-Nearest Neighbors).
 ```mermaid
 graph LR
-    A[Web Scraper] -->|JSON| B(Kafka Topic: raw-web-data)
-    B --> C[Python Processor]
-    C -->|1. Chunk Text| C
-    C -->|2. Generate Embeddings| C
-    C -->|3. Bulk Index| D[(OpenSearch)]
-    E[User Query] -->|Vectorize| D
-    D --> F[Search Results]
+    subgraph "Data Acquisition"
+        A[Web Scraper] -->|JSON| B(Kafka Topic: raw-web-data)
+    end
+
+    subgraph "Ingestion Layer"
+        B --> C[Kafka Connect / Data Prepper]
+        C -->|Bulk Request| D(OpenSearch Ingest Node)
+    end
+
+    subgraph "OpenSearch Cluster"
+        D --> P{Ingest Pipeline}
+        
+        subgraph "Native Processors"
+            P -->|Split| E[Text Chunking Processor]
+            E -->|Vectorize| F[Text Embedding Processor]
+        end
+
+        F <-->|Inference| G[ML Commons Node]
+        F -->|Indexed Documents| H[(Target Index)]
+    end
+
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style G fill:#bfb,stroke:#333,stroke-width:2px
 ```
 
 
@@ -51,21 +68,21 @@ graph LR
 
 ### Phase 1: Infrastructure (Weeks 1-2)
 
-- [ ] Set up Docker Compose for OpenSearch, Dashboards, and Kafka.[^11]
+- [ ] Set up Docker Compose for OpenSearch, Dashboards, and Kafka.
 - [ ] Verify connectivity between containers.
 - [ ] Create initial index mappings with k-NN enabled.
 
 
 ### Phase 2: Data Pipeline (Weeks 3-4)
 
-- [ ] Develop Python scraper for target websites.[^12][^13]
+- [ ] Develop Python scraper for target websites.
 - [ ] Implement Kafka Producer to stream raw data.
 - [ ] Implement Kafka Consumer to read and print data (test).
 
 
 ### Phase 3: Semantic Processing (Weeks 5-6)
 
-- [ ] Integrate `sentence-transformers` for local embedding generation.[^14][^15]
+- [ ] Integrate `sentence-transformers` for local embedding generation.
 - [ ] Implement chunking logic (sliding window).
 - [ ] Connect Consumer output to OpenSearch bulk indexing API.
 
@@ -75,53 +92,3 @@ graph LR
 - [ ] Build a simple Streamlit or Flask frontend for user queries.
 - [ ] Visualize document ingest rates in OpenSearch Dashboards.
 - [ ] Tune k-NN parameters (ef_search, m) for performance.
-
-
-## 6. Alternative: OpenSearch Native Pipelines
-
-Instead of external Python processing, OpenSearch 2.9+ supports **Neural Search** plugins (runing models inside OpenSearch).
-
-* **Pros:** Simplified architecture (no separate Python processor service).
-* **Cons:** Higher hardware resource requirement for the OpenSearch node.
-* **Recommendation:** Stick to the Python external processor approach for this project to demonstrate modular Big Data engineering skills (Queue + Worker pattern) as requested in the description.
-
-
-## 7. References
-
-1. OpenSearch Project. "Neural Search \& k-NN." *OpenSearch Documentation*, 2024.
-2. Reimers, Nils. "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks." *sbert.net*, 2019.
-3. Kafka Documentation. "Producers and Consumers." *Apache Kafka*, 2024.
-<span style="display:none">[^1][^10][^2][^3][^4][^5][^6][^7][^8][^9]</span>
-
-<div align="center">⁂</div>
-
-[^1]: https://www.markdownguide.org/basic-syntax/
-
-[^2]: https://markdown-it.github.io
-
-[^3]: https://www.markdownguide.org/getting-started/
-
-[^4]: https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
-
-[^5]: https://quarto.org/docs/authoring/markdown-basics.html
-
-[^6]: https://www.sitepoint.com/learn-markdown/
-
-[^7]: https://learn.microsoft.com/en-us/azure/devops/project/wiki/markdown-guidance?view=azure-devops
-
-[^8]: https://stackoverflow.com/questions/19699059/print-directory-file-structure-with-icons-for-representation-in-markdown
-
-[^9]: https://docs.gitlab.com/user/markdown/
-
-[^10]: https://the.fibery.io/@public/User_Guide/Guide/Markdown-Templates-53
-
-[^11]: https://aws.amazon.com/blogs/big-data/amazon-opensearch-service-vector-database-capabilities-revisited/
-
-[^12]: https://www.nimbleway.com/blog/the-definitive-guide-to-web-scraping-in-2024
-
-[^13]: https://dev.to/dowerdev/effective-web-scraping-with-python-building-a-robust-data-pipeline-for-price-monitoring-5g6d
-
-[^14]: https://dzone.com/articles/building-a-rag-model-pipeline-using-python
-
-[^15]: https://docs.opensearch.org/latest/tutorials/vector-search/vector-operations/generate-embeddings/
-
