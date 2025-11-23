@@ -9,13 +9,12 @@
 **Scope:** Data acquisition (scraping), ingestion (Kafka), processing (chunking/embedding), storage (OpenSearch), and visualization (OpenSearch Dashboards).
 
 **Team:**
-- Andrei-Daniel Anghelescu
-- Rares-Alexandru Constantin
-- Robert Grancsa
-- Ana-Maria Toader
+- Andrei-Daniel Anghelescu - Kafka integration
+- Rares-Alexandru Constantin - Web crawler feature
+- Robert Grancsa - Orchestration and Visualisation
+- Ana-Maria Toader - Pipeline implementation
 
-
-## 2. Technology Stack
+## Technology Stack
 
 | Component | Technology | Role in Pipeline |
 | :-- | :-- | :-- |
@@ -26,7 +25,7 @@
 | **Embeddings** | HuggingFace / ONNX | Sentence-transformers (e.g., `all-MiniLM-L6-v2`) |
 | **Visualization** | OpenSearch Dashboards | UI for querying and visualizing data |
 
-## 3. Architecture Overview
+## Architecture Overview
 
 The pipeline follows a standard ETL (Extract, Transform, Load) pattern enhanced for vector search:
 
@@ -63,7 +62,7 @@ graph LR
 ```
 
 
-## 5. Development Roadmap (7 Weeks)
+## Development Roadmap (7 Weeks)
 
 ### Phase 1: Infrastructure (Weeks 1-2)
 
@@ -91,3 +90,17 @@ graph LR
 - [ ] Build a simple Streamlit or Flask frontend for user queries.
 - [ ] Visualize document ingest rates in OpenSearch Dashboards.
 - [ ] Tune k-NN parameters (ef_search, m) for performance.
+
+## Essays
+
+### Andrei-Daniel Anghelescu
+**"Building a Resilient Data Ingestion Layer with Apache Kafka"**
+
+### Rares-Alexandru Constantin
+**"Developing a Scalable Web Scraper for Data Aggregation"**
+
+### Robert Grancsa
+**"Orchestrating Services and Visualizing Data with OpenSearch"**
+
+### Ana-Maria Toader
+**"Implementing a Semantic Processing Pipeline for Text Embeddings"**
