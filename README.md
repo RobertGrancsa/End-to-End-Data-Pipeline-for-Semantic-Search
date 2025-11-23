@@ -3,8 +3,11 @@
 ## Summary
 
 **Project Title:** End-to-End Data Pipeline with OpenSearch and Semantic Search
+
 **Objective:** Build a scalable Big Data pipeline that scrapes web data, processes it via message queues, generates vector embeddings, and indexes it into OpenSearch for hybrid (lexical + semantic) search retrieval.
+
 **Scope:** Data acquisition (scraping), ingestion (Kafka), processing (chunking/embedding), storage (OpenSearch), and visualization (OpenSearch Dashboards).
+
 **Team:**
 - Andrei-Daniel Anghelescu
 - Rares-Alexandru Constantin
