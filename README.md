@@ -57,10 +57,6 @@ graph LR
         F <-->|Inference| G[ML Commons Node]
         F -->|Indexed Documents| H[(Target Index)]
     end
-
-    style B fill:#f9f,stroke:#333,stroke-width:2px
-    style D fill:#bbf,stroke:#333,stroke-width:2px
-    style G fill:#bfb,stroke:#333,stroke-width:2px
 ```
 
 
