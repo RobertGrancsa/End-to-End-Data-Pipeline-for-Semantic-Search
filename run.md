@@ -1,30 +1,30 @@
-# 🚀 Ghid de Rulare - End-to-End Data Pipeline pentru Semantic Search
+# 🚀 Running Guide - End-to-End Data Pipeline for Semantic Search
 
-## 📋 Cuprins
+## 📋 Table of Contents
 
-1. [Prezentare Generală](#prezentare-generală)
-2. [Contribuții pe Membri](#contribuții-pe-membri)
-3. [Cerințe Sistem](#cerințe-sistem)
-4. [Instalare și Configurare](#instalare-și-configurare)
-5. [Pornire Infrastructură](#pornire-infrastructură)
-6. [Rulare Pipeline](#rulare-pipeline)
-7. [Utilizare Frontend](#utilizare-frontend)
-8. [Testare](#testare)
+1. [General Overview](#general-overview)
+2. [Team Contributions](#team-contributions)
+3. [System Requirements](#system-requirements)
+4. [Installation and Configuration](#installation-and-configuration)
+5. [Starting Infrastructure](#starting-infrastructure)
+6. [Running the Pipeline](#running-the-pipeline)
+7. [Using the Frontend](#using-the-frontend)
+8. [Testing](#testing)
 9. [Troubleshooting](#troubleshooting)
 
 ---
 
-## 📖 Prezentare Generală
+## 📖 General Overview
 
-Acest proiect implementează o pipeline de date end-to-end pentru căutare semantică, care:
+This project implements an end-to-end data pipeline for semantic search that:
 
-1. **Scrapează** date de pe web
-2. **Streamează** datele prin Apache Kafka
-3. **Procesează** textul (chunking + embedding)
-4. **Indexează** în OpenSearch cu suport k-NN
-5. **Permite căutare** semantică, text sau hibridă
+1. **Scrapes** data from the web
+2. **Streams** data through Apache Kafka
+3. **Processes** text (chunking + embedding)
+4. **Indexes** in OpenSearch with k-NN support
+5. **Enables** semantic, text, or hybrid search
 
-### Arhitectura
+### Architecture
 
 ```
 [Web Scraper] → [Kafka] → [Processor] → [OpenSearch] → [Frontend]
@@ -35,37 +35,37 @@ Acest proiect implementează o pipeline de date end-to-end pentru căutare seman
 
 ---
 
-## 👥 Contribuții pe Membri
+## 👥 Team Contributions
 
 ### 🔧 Andrei-Daniel Anghelescu - Kafka Integration
 
 **Essay:** "Building a Resilient Data Ingestion Layer with Apache Kafka"
 
-**Fișiere dezvoltate:**
+**Developed files:**
 - `src/kafka/__init__.py` - Package initialization
-- `src/kafka/producer.py` - Kafka Producer cu features:
-  - Reconectare automată cu retry exponential
-  - Serializare JSON
-  - Callback-uri pentru confirmare delivery
-  - Tracking statistici (mesaje trimise, eșuate, bytes)
-  - Suport batch sending
+- `src/kafka/producer.py` - Kafka Producer with features:
+  - Automatic reconnection with exponential retry
+  - JSON serialization
+  - Delivery confirmation callbacks
+  - Statistics tracking (messages sent, failed, bytes)
+  - Batch sending support
   - Graceful shutdown
   
-- `src/kafka/consumer.py` - Kafka Consumer cu features:
-  - Reconnection automată
-  - Deserializare JSON
+- `src/kafka/consumer.py` - Kafka Consumer with features:
+  - Automatic reconnection
+  - JSON deserialization
   - Manual/auto offset commit
-  - Graceful shutdown cu signal handlers
-  - Statistici consum (mesaje, timp procesare, lag)
-  - Generator pattern pentru consum continuu
+  - Graceful shutdown with signal handlers
+  - Consumption statistics (messages, processing time, lag)
+  - Generator pattern for continuous consumption
 
-**Componente cheie:**
+**Key components:**
 ```python
-# Producer - trimite documente scrapate la Kafka
+# Producer - sends scraped documents to Kafka
 with KafkaProducerWrapper() as producer:
     producer.send(message=doc.to_dict(), key=doc.doc_id)
 
-# Consumer - citește și procesează mesaje
+# Consumer - reads and processes messages
 with KafkaConsumerWrapper() as consumer:
     for msg in consumer.consume(process_callback=my_processor):
         # Process each message
@@ -78,46 +78,46 @@ with KafkaConsumerWrapper() as consumer:
 
 **Essay:** "Developing a Scalable Web Scraper for Data Aggregation"
 
-**Fișiere dezvoltate:**
+**Developed files:**
 - `src/scraper/__init__.py` - Package initialization
-- `src/scraper/web_scraper.py` - Web Scraper cu features:
-  - Rate limiting cu delay configurabil
-  - Retry logic cu exponential backoff
-  - Extracție text curat din HTML
-  - Generare ID-uri unice pentru documente
-  - Rotație User-Agent
-  - Crawling recursiv cu control depth
-  - Deduplicare URL-uri vizitate
+- `src/scraper/web_scraper.py` - Web Scraper with features:
+  - Rate limiting with configurable delay
+  - Retry logic with exponential backoff
+  - Clean text extraction from HTML
+  - Unique document ID generation
+  - User-Agent rotation
+  - Recursive crawling with depth control
+  - Visited URL deduplication
   
-- `src/scraper/content_extractor.py` - Content Extractor cu features:
-  - Detectare automată main content
-  - Eliminare elemente non-content (nav, footer, scripts)
-  - Extracție headings, paragraphs, links, images
-  - Extracție metadata (og:tags, description, etc.)
+- `src/scraper/content_extractor.py` - Content Extractor with features:
+  - Automatic main content detection
+  - Non-content element removal (nav, footer, scripts)
+  - Headings, paragraphs, links, images extraction
+  - Metadata extraction (og:tags, description, etc.)
   - Text density analysis
 
-**Componente cheie:**
+**Key components:**
 ```python
-# Scraper simplu
+# Simple scraper
 scraper = WebScraper(delay_seconds=1, max_pages=100)
 for doc in scraper.scrape_urls(["https://example.com"]):
     print(doc.title, doc.content[:100])
 
-# Crawling recursiv
+# Recursive crawling
 for doc in scraper.crawl_website("https://example.com", max_depth=2):
     process(doc)
 ```
 
 ---
 
-### 🎯 Robert Grancsa - Orchestration și Visualization
+### 🎯 Robert Grancsa - Orchestration and Visualization
 
 **Essay:** "Orchestrating Services and Visualizing Data with OpenSearch"
 
-**Fișiere dezvoltate:**
+**Developed files:**
 
-**Infrastructură Docker:**
-- `docker-compose.yml` - Orchestrare servicii:
+**Docker Infrastructure:**
+- `docker-compose.yml` - Service orchestration:
   - Zookeeper (Kafka coordination)
   - Apache Kafka (message broker)
   - Kafka UI (monitoring)
@@ -126,37 +126,37 @@ for doc in scraper.crawl_website("https://example.com", max_depth=2):
 
 **OpenSearch Integration:**
 - `src/opensearch/__init__.py` - Package initialization
-- `src/opensearch/client.py` - OpenSearch Client cu features:
-  - Connection management cu retry
-  - Bulk indexing pentru eficiență
+- `src/opensearch/client.py` - OpenSearch Client with features:
+  - Connection management with retry
+  - Bulk indexing for efficiency
   - k-NN (vector) search
   - Hybrid search (BM25 + semantic)
-  - Text search clasic
-  - Statistici cluster
+  - Classic text search
+  - Cluster statistics
 
-- `src/opensearch/index_manager.py` - Index Manager cu features:
-  - Creare index k-NN enabled
-  - Mappings optimizate pentru semantic search
-  - Multiple algoritmi k-NN (HNSW, FAISS)
-  - Tuning performance/accuracy
+- `src/opensearch/index_manager.py` - Index Manager with features:
+  - k-NN enabled index creation
+  - Optimized mappings for semantic search
+  - Multiple k-NN algorithms (HNSW, FAISS)
+  - Performance/accuracy tuning
   - Index lifecycle management
 
 **Pipeline Orchestration:**
 - `src/pipeline/__init__.py` - Package initialization
-- `src/pipeline/data_pipeline.py` - Data Pipeline integrat
-- `src/pipeline/pipeline_runner.py` - CLI pentru rulare
+- `src/pipeline/data_pipeline.py` - Integrated Data Pipeline
+- `src/pipeline/pipeline_runner.py` - CLI for execution
 
 **Frontend:**
-- `src/frontend/app.py` - Streamlit UI pentru căutare
+- `src/frontend/app.py` - Streamlit UI for search
 
-**Scripturi:**
-- `scripts/start.sh` - Pornire infrastructură
-- `scripts/stop.sh` - Oprire infrastructură
-- `scripts/create_index.sh` - Creare index
+**Scripts:**
+- `scripts/start.sh` - Start infrastructure
+- `scripts/stop.sh` - Stop infrastructure
+- `scripts/create_index.sh` - Create index
 
-**Configurare:**
-- `src/config.py` - Centralizare configurări
-- `.env.example` - Template variabile environment
+**Configuration:**
+- `src/config.py` - Centralized settings
+- `.env.example` - Environment variables template
 
 ---
 
@@ -164,26 +164,26 @@ for doc in scraper.crawl_website("https://example.com", max_depth=2):
 
 **Essay:** "Implementing a Semantic Processing Pipeline for Text Embeddings"
 
-**Fișiere dezvoltate:**
+**Developed files:**
 - `src/processing/__init__.py` - Package initialization
-- `src/processing/chunker.py` - Text Chunker cu features:
+- `src/processing/chunker.py` - Text Chunker with features:
   - Token-based chunking (sliding window)
-  - Configurable chunk size și overlap
+  - Configurable chunk size and overlap
   - Sentence-aware boundaries
-  - Semantic chunker avansat (detectează headings)
-  - Statistici chunk-uri
-  - Generator pattern pentru memory efficiency
+  - Advanced semantic chunker (detects headings)
+  - Chunk statistics
+  - Generator pattern for memory efficiency
 
-- `src/processing/embedder.py` - Embedding Generator cu features:
+- `src/processing/embedder.py` - Embedding Generator with features:
   - Sentence-transformers integration
   - Multiple model support (MiniLM, MPNet, etc.)
-  - Batch processing pentru eficiență
+  - Batch processing for efficiency
   - CPU/GPU auto-detection
-  - Caching pentru queries repetate
+  - Caching for repeated queries
   - Similarity calculation (cosine)
   - Find most similar (local search)
 
-**Componente cheie:**
+**Key components:**
 ```python
 # Chunking
 chunker = TextChunker(chunk_size=500, chunk_overlap=50)
@@ -200,18 +200,18 @@ similar = embedder.find_most_similar(query_vector, all_embeddings, top_k=5)
 
 ---
 
-## 💻 Cerințe Sistem
+## 💻 System Requirements
 
-### Software necesar:
+### Required software:
 - **Docker** & **Docker Compose** (v2.0+)
-- **Python** 3.10+ (recomandat 3.12)
-- **pip** pentru instalare pachete
-- **8GB RAM** minim (recomandat 16GB)
-- **20GB disk** spațiu liber
+- **Python** 3.10+ (recommended 3.12)
+- **pip** for package installation
+- **8GB RAM** minimum (recommended 16GB)
+- **20GB disk** free space
 
-### Porturi utilizate:
-| Port | Serviciu |
-|------|----------|
+### Ports used:
+| Port | Service |
+|------|---------|
 | 2181 | Zookeeper |
 | 9092 | Kafka |
 | 8080 | Kafka UI |
@@ -221,40 +221,40 @@ similar = embedder.find_most_similar(query_vector, all_embeddings, top_k=5)
 
 ---
 
-## 🔧 Instalare și Configurare
+## 🔧 Installation and Configuration
 
-### 1. Clonare proiect
+### 1. Clone project
 ```bash
 cd /home/gemdekaise/from_0_to_hero
 ```
 
-### 2. Creare environment Python
+### 2. Create Python environment
 ```bash
-# Creare virtual environment
+# Create virtual environment
 python -m venv venv
 
-# Activare (Linux/Mac)
+# Activate (Linux/Mac)
 source venv/bin/activate
 
-# Activare (Windows)
+# Activate (Windows)
 .\venv\Scripts\activate
 ```
 
-### 3. Instalare dependențe
+### 3. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configurare environment
+### 4. Configure environment
 ```bash
-# Copiere template
+# Copy template
 cp .env.example .env
 
-# Editare dacă e necesar
+# Edit if necessary
 nano .env
 ```
 
-**Variabile importante în `.env`:**
+**Important variables in `.env`:**
 ```bash
 # Kafka
 KAFKA_BOOTSTRAP_SERVERS=localhost:9092
@@ -276,27 +276,27 @@ CHUNK_OVERLAP=50
 
 ---
 
-## 🚀 Pornire Infrastructură
+## 🚀 Starting Infrastructure
 
-### Opțiunea 1: Script automat
+### Option 1: Automatic script
 ```bash
 chmod +x scripts/start.sh
 ./scripts/start.sh
 ```
 
-### Opțiunea 2: Manual
+### Option 2: Manual
 ```bash
-# Pornire containere
+# Start containers
 docker-compose up -d
 
-# Verificare status
+# Check status
 docker-compose ps
 
-# Așteptare servicii
-# Kafka: curl localhost:9092 (va da eroare, dar portul e deschis)
+# Wait for services
+# Kafka: curl localhost:9092 (will error, but port is open)
 # OpenSearch: curl localhost:9200
 
-# Creare topic Kafka
+# Create Kafka topic
 docker-compose exec kafka kafka-topics --create \
     --bootstrap-server localhost:9092 \
     --topic raw-web-data \
@@ -304,67 +304,67 @@ docker-compose exec kafka kafka-topics --create \
     --replication-factor 1
 ```
 
-### Verificare servicii:
+### Verify services:
 - **Kafka UI:** http://localhost:8080
 - **OpenSearch:** http://localhost:9200
 - **OpenSearch Dashboards:** http://localhost:5601
 
-### Oprire infrastructură:
+### Stop infrastructure:
 ```bash
 ./scripts/stop.sh
-# sau
+# or
 docker-compose down
 ```
 
 ---
 
-## ▶️ Rulare Pipeline
+## ▶️ Running the Pipeline
 
-### Mod 1: Direct (fără Kafka) - Recomandat pentru teste
+### Mode 1: Direct (without Kafka) - Recommended for testing
 ```bash
-# Scrape, procesează și indexează direct
+# Scrape, process and index directly
 python src/pipeline/pipeline_runner.py direct \
     --urls https://en.wikipedia.org/wiki/Machine_learning \
            https://en.wikipedia.org/wiki/Deep_learning \
     --batch-size 50
 ```
 
-### Mod 2: Cu Kafka (producție)
+### Mode 2: With Kafka (production)
 
-**Terminal 1 - Producer (scrape și trimite la Kafka):**
+**Terminal 1 - Producer (scrape and send to Kafka):**
 ```bash
 python src/pipeline/pipeline_runner.py producer \
     --urls https://en.wikipedia.org/wiki/Machine_learning \
-    --crawl  # opțional: crawl linked pages
+    --crawl  # optional: crawl linked pages
 ```
 
-**Terminal 2 - Consumer (citește din Kafka și indexează):**
+**Terminal 2 - Consumer (read from Kafka and index):**
 ```bash
 python src/pipeline/pipeline_runner.py consumer \
     --batch-size 50 \
-    --max-messages 1000  # opțional: limită mesaje
+    --max-messages 1000  # optional: message limit
 ```
 
-### Mod 3: Căutare
+### Mode 3: Search
 ```bash
-# Căutare hibridă (recomandat)
+# Hybrid search (recommended)
 python src/pipeline/pipeline_runner.py search \
     --query "What is deep learning?" \
     --k 10 \
     --type hybrid
 
-# Căutare semantică pură
+# Pure semantic search
 python src/pipeline/pipeline_runner.py search \
     --query "neural networks" \
     --type semantic
 
-# Căutare text (BM25)
+# Text search (BM25)
 python src/pipeline/pipeline_runner.py search \
     --query "machine learning algorithms" \
     --type text
 ```
 
-### Opțiuni CLI:
+### CLI Options:
 ```bash
 python src/pipeline/pipeline_runner.py --help
 
@@ -377,39 +377,39 @@ python src/pipeline/pipeline_runner.py \
 
 ---
 
-## 🖥️ Utilizare Frontend
+## 🖥️ Using the Frontend
 
-### Pornire Streamlit:
+### Start Streamlit:
 ```bash
 streamlit run src/frontend/app.py
 ```
 
-Aplicația va fi disponibilă la: **http://localhost:8501**
+The application will be available at: **http://localhost:8501**
 
 ### Features:
-- 🔍 **Search box** cu auto-complete
-- 📊 **Statistici index** în sidebar
-- 🔄 **Trei tipuri căutare:** semantic, text, hybrid
-- 🎯 **Rezultate** cu score, titlu, URL, text
-- 🛠️ **Admin tools** pentru management index
+- 🔍 **Search box** with auto-complete
+- 📊 **Index statistics** in sidebar
+- 🔄 **Three search types:** semantic, text, hybrid
+- 🎯 **Results** with score, title, URL, text
+- 🛠️ **Admin tools** for index management
 
 ---
 
-## 🧪 Testare
+## 🧪 Testing
 
-### Rulare teste:
+### Run tests:
 ```bash
-# Toate testele
+# All tests
 pytest tests/ -v
 
-# Cu coverage
+# With coverage
 pytest tests/ --cov=src --cov-report=html
 
-# Test specific
+# Specific test
 pytest tests/test_pipeline.py::TestTextChunker -v
 ```
 
-### Teste manuale:
+### Manual tests:
 
 **1. Test Scraper:**
 ```python
@@ -450,64 +450,64 @@ with OpenSearchClient() as client:
 
 ## 🔧 Troubleshooting
 
-### Probleme comune:
+### Common issues:
 
 **1. "No brokers available"**
 ```bash
-# Verificare Kafka
+# Check Kafka
 docker-compose logs kafka
 docker-compose restart kafka
 ```
 
-**2. "Connection refused" la OpenSearch**
+**2. "Connection refused" to OpenSearch**
 ```bash
-# Verificare OpenSearch
+# Check OpenSearch
 docker-compose logs opensearch
 curl http://localhost:9200
 
-# Increase memory dacă e necesar
-# În docker-compose.yml: OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g
+# Increase memory if necessary
+# In docker-compose.yml: OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g
 ```
 
-**3. "Out of memory" la embedding**
+**3. "Out of memory" during embedding**
 ```python
-# Folosește batch size mai mic
+# Use smaller batch size
 embedder.embed_texts(texts, batch_size=8)
 ```
 
 **4. Slow indexing**
 ```python
-# După bulk indexing, force merge:
+# After bulk indexing, force merge:
 index_manager.force_merge(index_name, max_num_segments=1)
 ```
 
 **5. Module not found**
 ```bash
-# Adaugă src la PYTHONPATH
+# Add src to PYTHONPATH
 export PYTHONPATH="${PYTHONPATH}:$(pwd)"
 ```
 
 ---
 
-## 📁 Structura Proiect
+## 📁 Project Structure
 
 ```
 from_0_to_hero/
-├── docker-compose.yml          # Orchestrare Docker
-├── requirements.txt            # Dependențe Python
-├── .env.example               # Template configurare
+├── docker-compose.yml          # Docker orchestration
+├── requirements.txt            # Python dependencies
+├── .env.example               # Configuration template
 ├── .gitignore
-├── README.md                  # Documentație proiect
-├── run.md                     # Acest fișier
+├── README.md                  # Project documentation
+├── run.md                     # This file
 │
 ├── scripts/
-│   ├── start.sh              # Pornire infrastructură
-│   ├── stop.sh               # Oprire infrastructură
-│   └── create_index.sh       # Creare index OpenSearch
+│   ├── start.sh              # Start infrastructure
+│   ├── stop.sh               # Stop infrastructure
+│   └── create_index.sh       # Create OpenSearch index
 │
 ├── src/
 │   ├── __init__.py
-│   ├── config.py             # Configurări centralizate
+│   ├── config.py             # Centralized settings
 │   │
 │   ├── scraper/              # [Rares-Alexandru Constantin]
 │   │   ├── __init__.py
@@ -529,9 +529,9 @@ from_0_to_hero/
 │   │   ├── client.py         # OpenSearch client
 │   │   └── index_manager.py  # Index management
 │   │
-│   ├── pipeline/             # [Toți]
+│   ├── pipeline/             # [All team members]
 │   │   ├── __init__.py
-│   │   ├── data_pipeline.py  # Pipeline principal
+│   │   ├── data_pipeline.py  # Main pipeline
 │   │   └── pipeline_runner.py # CLI
 │   │
 │   └── frontend/             # [Robert Grancsa]
@@ -545,38 +545,38 @@ from_0_to_hero/
 
 ---
 
-## 📊 Metrici și Performanță
+## 📊 Metrics and Performance
 
-### Benchmarks tipice:
+### Typical benchmarks:
 
-| Operație | Timp aproximativ |
-|----------|------------------|
-| Scrape 1 pagină | 1-3 secunde |
+| Operation | Approximate time |
+|-----------|------------------|
+| Scrape 1 page | 1-3 seconds |
 | Chunk 10KB text | <100ms |
 | Embed 1 chunk | ~50ms (CPU) |
 | Embed batch 100 | ~2s (CPU) |
 | Index 1000 docs | ~5-10s |
 | k-NN search | <100ms |
 
-### Recomandări scaling:
+### Scaling recommendations:
 
-- **Mai multe pagini:** Crește `max_pages_per_site`
-- **Mai mult paralelism:** Multiple producer/consumer instances
-- **Mai multe date:** Increase OpenSearch heap și shards
-- **Mai rapid embedding:** Folosește GPU cu PyTorch CUDA
+- **More pages:** Increase `max_pages_per_site`
+- **More parallelism:** Multiple producer/consumer instances
+- **More data:** Increase OpenSearch heap and shards
+- **Faster embedding:** Use GPU with PyTorch CUDA
 
 ---
 
-## 📝 Note Finale
+## 📝 Final Notes
 
-Proiectul implementează complet toate cerințele din README:
+The project fully implements all requirements from the README:
 
-✅ **Faza 1:** Infrastructure (Docker Compose, OpenSearch, Kafka)  
-✅ **Faza 2:** Data Pipeline (Scraper, Producer, Consumer)  
-✅ **Faza 3:** Semantic Processing (Chunking, Embedding, Indexing)  
-✅ **Faza 4:** UI & Refinement (Streamlit frontend, k-NN tuning)
+✅ **Phase 1:** Infrastructure (Docker Compose, OpenSearch, Kafka)  
+✅ **Phase 2:** Data Pipeline (Scraper, Producer, Consumer)  
+✅ **Phase 3:** Semantic Processing (Chunking, Embedding, Indexing)  
+✅ **Phase 4:** UI & Refinement (Streamlit frontend, k-NN tuning)
 
-**Echipa:**
+**Team:**
 - **Andrei-Daniel Anghelescu** - Kafka integration
 - **Rares-Alexandru Constantin** - Web crawler
 - **Robert Grancsa** - Orchestration & Visualization
@@ -584,4 +584,4 @@ Proiectul implementează complet toate cerințele din README:
 
 ---
 
-*Generat automat - Ianuarie 2026*
+*Auto-generated - January 2026*
