@@ -118,6 +118,25 @@ services:
     networks:
       - pipeline-network
 
+  # ==================== FRONTEND (STREAMLIT) ====================
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: frontend
+    depends_on:
+      opensearch:
+        condition: service_healthy
+    ports:
+      - "8501:8501"
+    environment:
+      - OPENSEARCH_HOST=opensearch
+      - OPENSEARCH_PORT=9200
+      - PYTHONPATH=/app
+    networks:
+      - pipeline-network
+    restart: unless-stopped
+
 volumes:
   zookeeper_data:
   zookeeper_log:

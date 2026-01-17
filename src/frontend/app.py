@@ -65,6 +65,60 @@ def get_pipeline():
     return pipeline
 
 
+@st.cache_data(ttl=300)
+def get_example_queries():
+    """Get example queries based on indexed content"""
+    try:
+        pipeline = get_pipeline()
+        # Get some sample documents to extract topics
+        results = pipeline.os_client.client.search(
+            index=pipeline.index_name,
+            body={
+                "size": 20,
+                "query": {"match_all": {}},
+                "_source": ["title", "text"]
+            }
+        )
+        
+        # Extract unique titles/topics
+        titles = set()
+        for hit in results.get('hits', {}).get('hits', []):
+            title = hit.get('_source', {}).get('title', '')
+            if title and len(title) > 5:
+                # Clean up title
+                title = title.split(' - ')[0].split('|')[0].strip()
+                if len(title) < 50:
+                    titles.add(title)
+        
+        # Generate queries from titles
+        queries = []
+        title_list = list(titles)[:10]
+        
+        for title in title_list[:5]:
+            queries.append(f"What is {title}?")
+        
+        # Add some generic tech queries as fallback
+        if len(queries) < 5:
+            defaults = [
+                "What is machine learning?",
+                "How do neural networks work?",
+                "Explain natural language processing",
+                "Deep learning applications",
+                "Vector embeddings for search"
+            ]
+            queries.extend(defaults[:5 - len(queries)])
+        
+        return queries[:5]
+    except Exception:
+        return [
+            "What is machine learning?",
+            "How do neural networks work?",
+            "Explain natural language processing",
+            "Deep learning applications",
+            "Vector embeddings for search"
+        ]
+
+
 def render_result(result: Dict, rank: int):
     """Render a single search result"""
     st.markdown(f"""
@@ -140,18 +194,29 @@ def main():
     # Main search interface
     col1, col2 = st.columns([4, 1])
     
+    # Initialize session state for query
+    if 'search_query' not in st.session_state:
+        st.session_state.search_query = ""
+    
     with col1:
         query = st.text_input(
             "Enter your search query",
+            value=st.session_state.search_query,
             placeholder="e.g., What is machine learning?",
-            label_visibility="collapsed"
+            label_visibility="collapsed",
+            key="query_input"
         )
     
     with col2:
         search_button = st.button("🔍 Search", type="primary", use_container_width=True)
     
-    # Perform search
-    if search_button and query:
+    # Perform search when button clicked or query from example
+    should_search = search_button or (st.session_state.search_query and st.session_state.search_query == query)
+    
+    if should_search and query:
+        # Clear the session state query after using it
+        st.session_state.search_query = ""
+        
         try:
             pipeline = get_pipeline()
             
@@ -176,24 +241,18 @@ def main():
         except Exception as e:
             st.error(f"Search failed: {e}")
     
-    # Example queries
-    if not query:
+    # Example queries - show only when no search performed
+    if not query or not should_search:
         st.markdown("---")
         st.subheader("💡 Example Queries")
         
-        examples = [
-            "What is machine learning?",
-            "How do neural networks work?",
-            "Explain natural language processing",
-            "Deep learning applications",
-            "Vector embeddings for search"
-        ]
+        examples = get_example_queries()
         
         cols = st.columns(len(examples))
         for col, example in zip(cols, examples):
             with col:
-                if st.button(example, key=f"example_{example}"):
-                    st.session_state['query'] = example
+                if st.button(example, key=f"example_{hash(example)}"):
+                    st.session_state.search_query = example
                     st.rerun()
 
 
