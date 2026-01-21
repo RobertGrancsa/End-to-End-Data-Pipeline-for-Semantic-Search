@@ -1,0 +1,641 @@
+# =============================================================================
+# Training Data URLs for Semantic Search Pipeline
+# =============================================================================
+# Categories:
+#   - Programming Languages
+#   - Web Development
+#   - Databases & Storage
+#   - Machine Learning & AI
+#   - Cloud & DevOps
+#   - Operating Systems
+#   - Computer Science Fundamentals
+#   - Software Engineering
+#   - Networking & Security
+#   - Hardware & Architecture
+#   - Science & Technology
+#   - Mathematics
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# PROGRAMMING LANGUAGES
+# -----------------------------------------------------------------------------
+
+# General Purpose Languages
+https://en.wikipedia.org/wiki/Python_(programming_language)
+https://en.wikipedia.org/wiki/Java_(programming_language)
+https://en.wikipedia.org/wiki/C_(programming_language)
+https://en.wikipedia.org/wiki/C%2B%2B
+https://en.wikipedia.org/wiki/C_Sharp_(programming_language)
+https://en.wikipedia.org/wiki/JavaScript
+https://en.wikipedia.org/wiki/TypeScript
+https://en.wikipedia.org/wiki/Go_(programming_language)
+https://en.wikipedia.org/wiki/Rust_(programming_language)
+https://en.wikipedia.org/wiki/Swift_(programming_language)
+https://en.wikipedia.org/wiki/Kotlin_(programming_language)
+https://en.wikipedia.org/wiki/Ruby_(programming_language)
+https://en.wikipedia.org/wiki/PHP
+https://en.wikipedia.org/wiki/Perl
+https://en.wikipedia.org/wiki/Scala_(programming_language)
+https://en.wikipedia.org/wiki/Lua_(programming_language)
+https://en.wikipedia.org/wiki/Dart_(programming_language)
+https://en.wikipedia.org/wiki/Julia_(programming_language)
+https://en.wikipedia.org/wiki/R_(programming_language)
+https://en.wikipedia.org/wiki/MATLAB
+
+# Functional Languages
+https://en.wikipedia.org/wiki/Haskell
+https://en.wikipedia.org/wiki/Erlang_(programming_language)
+https://en.wikipedia.org/wiki/Elixir_(programming_language)
+https://en.wikipedia.org/wiki/Clojure
+https://en.wikipedia.org/wiki/F_Sharp_(programming_language)
+https://en.wikipedia.org/wiki/OCaml
+https://en.wikipedia.org/wiki/Lisp_(programming_language)
+https://en.wikipedia.org/wiki/Scheme_(programming_language)
+https://en.wikipedia.org/wiki/Racket_(programming_language)
+
+# Systems Programming
+https://en.wikipedia.org/wiki/Assembly_language
+https://en.wikipedia.org/wiki/Fortran
+https://en.wikipedia.org/wiki/COBOL
+https://en.wikipedia.org/wiki/Ada_(programming_language)
+https://en.wikipedia.org/wiki/Pascal_(programming_language)
+https://en.wikipedia.org/wiki/Zig_(programming_language)
+
+# Scripting Languages
+https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+https://en.wikipedia.org/wiki/PowerShell
+https://en.wikipedia.org/wiki/AWK
+https://en.wikipedia.org/wiki/Sed
+https://en.wikipedia.org/wiki/Tcl
+
+# Query Languages
+https://en.wikipedia.org/wiki/SQL
+https://en.wikipedia.org/wiki/GraphQL
+https://en.wikipedia.org/wiki/XQuery
+https://en.wikipedia.org/wiki/SPARQL
+
+# Markup & Style Languages
+https://en.wikipedia.org/wiki/HTML
+https://en.wikipedia.org/wiki/CSS
+https://en.wikipedia.org/wiki/XML
+https://en.wikipedia.org/wiki/JSON
+https://en.wikipedia.org/wiki/YAML
+https://en.wikipedia.org/wiki/Markdown
+https://en.wikipedia.org/wiki/LaTeX
+
+# -----------------------------------------------------------------------------
+# WEB DEVELOPMENT
+# -----------------------------------------------------------------------------
+
+# Frontend Frameworks
+https://en.wikipedia.org/wiki/React_(JavaScript_library)
+https://en.wikipedia.org/wiki/Angular_(web_framework)
+https://en.wikipedia.org/wiki/Vue.js
+https://en.wikipedia.org/wiki/Svelte
+https://en.wikipedia.org/wiki/Next.js
+https://en.wikipedia.org/wiki/Nuxt.js
+https://en.wikipedia.org/wiki/Ember.js
+https://en.wikipedia.org/wiki/Backbone.js
+https://en.wikipedia.org/wiki/jQuery
+
+# Backend Frameworks
+https://en.wikipedia.org/wiki/Node.js
+https://en.wikipedia.org/wiki/Express.js
+https://en.wikipedia.org/wiki/Django_(web_framework)
+https://en.wikipedia.org/wiki/Flask_(web_framework)
+https://en.wikipedia.org/wiki/FastAPI
+https://en.wikipedia.org/wiki/Ruby_on_Rails
+https://en.wikipedia.org/wiki/Spring_Framework
+https://en.wikipedia.org/wiki/ASP.NET
+https://en.wikipedia.org/wiki/Laravel
+https://en.wikipedia.org/wiki/Symfony
+
+# Web Technologies
+https://en.wikipedia.org/wiki/REST
+https://en.wikipedia.org/wiki/SOAP
+https://en.wikipedia.org/wiki/WebSocket
+https://en.wikipedia.org/wiki/OAuth
+https://en.wikipedia.org/wiki/JSON_Web_Token
+https://en.wikipedia.org/wiki/Single-page_application
+https://en.wikipedia.org/wiki/Progressive_web_app
+https://en.wikipedia.org/wiki/Web_API
+https://en.wikipedia.org/wiki/Microservices
+https://en.wikipedia.org/wiki/Serverless_computing
+
+# CSS Frameworks
+https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)
+https://en.wikipedia.org/wiki/Tailwind_CSS
+https://en.wikipedia.org/wiki/Sass_(stylesheet_language)
+
+# -----------------------------------------------------------------------------
+# DATABASES & STORAGE
+# -----------------------------------------------------------------------------
+
+# Relational Databases
+https://en.wikipedia.org/wiki/MySQL
+https://en.wikipedia.org/wiki/PostgreSQL
+https://en.wikipedia.org/wiki/SQLite
+https://en.wikipedia.org/wiki/Oracle_Database
+https://en.wikipedia.org/wiki/Microsoft_SQL_Server
+https://en.wikipedia.org/wiki/MariaDB
+
+# NoSQL Databases
+https://en.wikipedia.org/wiki/MongoDB
+https://en.wikipedia.org/wiki/Redis
+https://en.wikipedia.org/wiki/Cassandra_(database)
+https://en.wikipedia.org/wiki/CouchDB
+https://en.wikipedia.org/wiki/Amazon_DynamoDB
+https://en.wikipedia.org/wiki/Neo4j
+https://en.wikipedia.org/wiki/Couchbase
+https://en.wikipedia.org/wiki/InfluxDB
+
+# Search Engines
+https://en.wikipedia.org/wiki/Elasticsearch
+https://en.wikipedia.org/wiki/Apache_Solr
+https://en.wikipedia.org/wiki/OpenSearch_(software)
+
+# Message Queues
+https://en.wikipedia.org/wiki/Apache_Kafka
+https://en.wikipedia.org/wiki/RabbitMQ
+https://en.wikipedia.org/wiki/Apache_ActiveMQ
+https://en.wikipedia.org/wiki/Amazon_SQS
+
+# Data Warehouses
+https://en.wikipedia.org/wiki/Apache_Hadoop
+https://en.wikipedia.org/wiki/Apache_Spark
+https://en.wikipedia.org/wiki/Apache_Hive
+https://en.wikipedia.org/wiki/Snowflake_Inc.
+https://en.wikipedia.org/wiki/Google_BigQuery
+
+# -----------------------------------------------------------------------------
+# MACHINE LEARNING & ARTIFICIAL INTELLIGENCE
+# -----------------------------------------------------------------------------
+
+# Core Concepts
+https://en.wikipedia.org/wiki/Machine_learning
+https://en.wikipedia.org/wiki/Deep_learning
+https://en.wikipedia.org/wiki/Artificial_intelligence
+https://en.wikipedia.org/wiki/Neural_network
+https://en.wikipedia.org/wiki/Artificial_neural_network
+https://en.wikipedia.org/wiki/Supervised_learning
+https://en.wikipedia.org/wiki/Unsupervised_learning
+https://en.wikipedia.org/wiki/Reinforcement_learning
+https://en.wikipedia.org/wiki/Transfer_learning
+https://en.wikipedia.org/wiki/Feature_engineering
+
+# Neural Network Architectures
+https://en.wikipedia.org/wiki/Convolutional_neural_network
+https://en.wikipedia.org/wiki/Recurrent_neural_network
+https://en.wikipedia.org/wiki/Long_short-term_memory
+https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)
+https://en.wikipedia.org/wiki/Generative_adversarial_network
+https://en.wikipedia.org/wiki/Autoencoder
+https://en.wikipedia.org/wiki/Variational_autoencoder
+https://en.wikipedia.org/wiki/Attention_(machine_learning)
+https://en.wikipedia.org/wiki/Residual_neural_network
+
+# ML Algorithms
+https://en.wikipedia.org/wiki/Linear_regression
+https://en.wikipedia.org/wiki/Logistic_regression
+https://en.wikipedia.org/wiki/Decision_tree
+https://en.wikipedia.org/wiki/Random_forest
+https://en.wikipedia.org/wiki/Support_vector_machine
+https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
+https://en.wikipedia.org/wiki/Naive_Bayes_classifier
+https://en.wikipedia.org/wiki/Gradient_boosting
+https://en.wikipedia.org/wiki/XGBoost
+https://en.wikipedia.org/wiki/K-means_clustering
+https://en.wikipedia.org/wiki/Principal_component_analysis
+https://en.wikipedia.org/wiki/Dimensionality_reduction
+
+# NLP
+https://en.wikipedia.org/wiki/Natural_language_processing
+https://en.wikipedia.org/wiki/Word_embedding
+https://en.wikipedia.org/wiki/Word2vec
+https://en.wikipedia.org/wiki/BERT_(language_model)
+https://en.wikipedia.org/wiki/GPT-3
+https://en.wikipedia.org/wiki/GPT-4
+https://en.wikipedia.org/wiki/Large_language_model
+https://en.wikipedia.org/wiki/Sentiment_analysis
+https://en.wikipedia.org/wiki/Named-entity_recognition
+https://en.wikipedia.org/wiki/Machine_translation
+https://en.wikipedia.org/wiki/Text_mining
+https://en.wikipedia.org/wiki/Chatbot
+
+# Computer Vision
+https://en.wikipedia.org/wiki/Computer_vision
+https://en.wikipedia.org/wiki/Image_recognition
+https://en.wikipedia.org/wiki/Object_detection
+https://en.wikipedia.org/wiki/Image_segmentation
+https://en.wikipedia.org/wiki/Optical_character_recognition
+https://en.wikipedia.org/wiki/Facial_recognition_system
+
+# ML Frameworks
+https://en.wikipedia.org/wiki/TensorFlow
+https://en.wikipedia.org/wiki/PyTorch
+https://en.wikipedia.org/wiki/Keras
+https://en.wikipedia.org/wiki/Scikit-learn
+https://en.wikipedia.org/wiki/Apache_MXNet
+https://en.wikipedia.org/wiki/Caffe_(software)
+https://en.wikipedia.org/wiki/Theano_(software)
+
+# MLOps
+https://en.wikipedia.org/wiki/MLOps
+https://en.wikipedia.org/wiki/Kubeflow
+
+# -----------------------------------------------------------------------------
+# CLOUD & DEVOPS
+# -----------------------------------------------------------------------------
+
+# Cloud Providers
+https://en.wikipedia.org/wiki/Amazon_Web_Services
+https://en.wikipedia.org/wiki/Microsoft_Azure
+https://en.wikipedia.org/wiki/Google_Cloud_Platform
+https://en.wikipedia.org/wiki/IBM_Cloud
+https://en.wikipedia.org/wiki/DigitalOcean
+https://en.wikipedia.org/wiki/Heroku
+https://en.wikipedia.org/wiki/Netlify
+https://en.wikipedia.org/wiki/Vercel
+
+# Containerization
+https://en.wikipedia.org/wiki/Docker_(software)
+https://en.wikipedia.org/wiki/Kubernetes
+https://en.wikipedia.org/wiki/Podman
+https://en.wikipedia.org/wiki/Container_orchestration
+https://en.wikipedia.org/wiki/OpenShift
+
+# CI/CD
+https://en.wikipedia.org/wiki/Continuous_integration
+https://en.wikipedia.org/wiki/Continuous_delivery
+https://en.wikipedia.org/wiki/Jenkins_(software)
+https://en.wikipedia.org/wiki/GitLab
+https://en.wikipedia.org/wiki/GitHub_Actions
+https://en.wikipedia.org/wiki/CircleCI
+https://en.wikipedia.org/wiki/Travis_CI
+https://en.wikipedia.org/wiki/Ansible_(software)
+https://en.wikipedia.org/wiki/Terraform_(software)
+https://en.wikipedia.org/wiki/Puppet_(software)
+https://en.wikipedia.org/wiki/Chef_(software)
+
+# Monitoring
+https://en.wikipedia.org/wiki/Prometheus_(software)
+https://en.wikipedia.org/wiki/Grafana
+https://en.wikipedia.org/wiki/Nagios
+https://en.wikipedia.org/wiki/Datadog
+https://en.wikipedia.org/wiki/Splunk
+
+# Version Control
+https://en.wikipedia.org/wiki/Git
+https://en.wikipedia.org/wiki/GitHub
+https://en.wikipedia.org/wiki/Bitbucket
+https://en.wikipedia.org/wiki/Subversion_(software)
+https://en.wikipedia.org/wiki/Mercurial
+
+# -----------------------------------------------------------------------------
+# OPERATING SYSTEMS
+# -----------------------------------------------------------------------------
+
+# Unix-like
+https://en.wikipedia.org/wiki/Linux
+https://en.wikipedia.org/wiki/Unix
+https://en.wikipedia.org/wiki/Ubuntu
+https://en.wikipedia.org/wiki/Debian
+https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux
+https://en.wikipedia.org/wiki/CentOS
+https://en.wikipedia.org/wiki/Fedora_Linux
+https://en.wikipedia.org/wiki/Arch_Linux
+https://en.wikipedia.org/wiki/Alpine_Linux
+https://en.wikipedia.org/wiki/Linux_kernel
+https://en.wikipedia.org/wiki/FreeBSD
+https://en.wikipedia.org/wiki/OpenBSD
+https://en.wikipedia.org/wiki/MacOS
+
+# Windows
+https://en.wikipedia.org/wiki/Microsoft_Windows
+https://en.wikipedia.org/wiki/Windows_10
+https://en.wikipedia.org/wiki/Windows_11
+https://en.wikipedia.org/wiki/Windows_Server
+
+# Mobile
+https://en.wikipedia.org/wiki/Android_(operating_system)
+https://en.wikipedia.org/wiki/IOS
+
+# Real-time
+https://en.wikipedia.org/wiki/Real-time_operating_system
+https://en.wikipedia.org/wiki/FreeRTOS
+
+# -----------------------------------------------------------------------------
+# COMPUTER SCIENCE FUNDAMENTALS
+# -----------------------------------------------------------------------------
+
+# Data Structures
+https://en.wikipedia.org/wiki/Data_structure
+https://en.wikipedia.org/wiki/Array_(data_structure)
+https://en.wikipedia.org/wiki/Linked_list
+https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
+https://en.wikipedia.org/wiki/Hash_table
+https://en.wikipedia.org/wiki/Tree_(data_structure)
+https://en.wikipedia.org/wiki/Binary_tree
+https://en.wikipedia.org/wiki/Binary_search_tree
+https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
+https://en.wikipedia.org/wiki/B-tree
+https://en.wikipedia.org/wiki/Heap_(data_structure)
+https://en.wikipedia.org/wiki/Graph_(abstract_data_type)
+https://en.wikipedia.org/wiki/Trie
+
+# Algorithms
+https://en.wikipedia.org/wiki/Algorithm
+https://en.wikipedia.org/wiki/Sorting_algorithm
+https://en.wikipedia.org/wiki/Quicksort
+https://en.wikipedia.org/wiki/Merge_sort
+https://en.wikipedia.org/wiki/Heapsort
+https://en.wikipedia.org/wiki/Binary_search_algorithm
+https://en.wikipedia.org/wiki/Breadth-first_search
+https://en.wikipedia.org/wiki/Depth-first_search
+https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+https://en.wikipedia.org/wiki/Dynamic_programming
+https://en.wikipedia.org/wiki/Greedy_algorithm
+https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm
+https://en.wikipedia.org/wiki/Backtracking
+https://en.wikipedia.org/wiki/Recursion_(computer_science)
+
+# Complexity
+https://en.wikipedia.org/wiki/Big_O_notation
+https://en.wikipedia.org/wiki/Time_complexity
+https://en.wikipedia.org/wiki/Space_complexity
+https://en.wikipedia.org/wiki/Computational_complexity_theory
+https://en.wikipedia.org/wiki/NP-completeness
+https://en.wikipedia.org/wiki/P_versus_NP_problem
+
+# Theory
+https://en.wikipedia.org/wiki/Turing_machine
+https://en.wikipedia.org/wiki/Halting_problem
+https://en.wikipedia.org/wiki/Automata_theory
+https://en.wikipedia.org/wiki/Formal_language
+https://en.wikipedia.org/wiki/Regular_expression
+https://en.wikipedia.org/wiki/Context-free_grammar
+
+# -----------------------------------------------------------------------------
+# SOFTWARE ENGINEERING
+# -----------------------------------------------------------------------------
+
+# Design Patterns
+https://en.wikipedia.org/wiki/Software_design_pattern
+https://en.wikipedia.org/wiki/Singleton_pattern
+https://en.wikipedia.org/wiki/Factory_method_pattern
+https://en.wikipedia.org/wiki/Observer_pattern
+https://en.wikipedia.org/wiki/Strategy_pattern
+https://en.wikipedia.org/wiki/Decorator_pattern
+https://en.wikipedia.org/wiki/Adapter_pattern
+https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
+
+# Methodologies
+https://en.wikipedia.org/wiki/Agile_software_development
+https://en.wikipedia.org/wiki/Scrum_(software_development)
+https://en.wikipedia.org/wiki/Kanban_(development)
+https://en.wikipedia.org/wiki/Extreme_programming
+https://en.wikipedia.org/wiki/Test-driven_development
+https://en.wikipedia.org/wiki/Behavior-driven_development
+https://en.wikipedia.org/wiki/Waterfall_model
+https://en.wikipedia.org/wiki/DevOps
+
+# Principles
+https://en.wikipedia.org/wiki/SOLID
+https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+https://en.wikipedia.org/wiki/KISS_principle
+https://en.wikipedia.org/wiki/Separation_of_concerns
+https://en.wikipedia.org/wiki/Coupling_(computer_programming)
+https://en.wikipedia.org/wiki/Cohesion_(computer_science)
+
+# Testing
+https://en.wikipedia.org/wiki/Software_testing
+https://en.wikipedia.org/wiki/Unit_testing
+https://en.wikipedia.org/wiki/Integration_testing
+https://en.wikipedia.org/wiki/Regression_testing
+https://en.wikipedia.org/wiki/Code_coverage
+https://en.wikipedia.org/wiki/Mocking_(computer_programming)
+
+# Documentation
+https://en.wikipedia.org/wiki/Technical_documentation
+https://en.wikipedia.org/wiki/API_documentation
+https://en.wikipedia.org/wiki/README
+
+# -----------------------------------------------------------------------------
+# NETWORKING & SECURITY
+# -----------------------------------------------------------------------------
+
+# Networking
+https://en.wikipedia.org/wiki/Computer_network
+https://en.wikipedia.org/wiki/Internet_protocol_suite
+https://en.wikipedia.org/wiki/Transmission_Control_Protocol
+https://en.wikipedia.org/wiki/User_Datagram_Protocol
+https://en.wikipedia.org/wiki/HTTP
+https://en.wikipedia.org/wiki/HTTPS
+https://en.wikipedia.org/wiki/Domain_Name_System
+https://en.wikipedia.org/wiki/IP_address
+https://en.wikipedia.org/wiki/IPv6
+https://en.wikipedia.org/wiki/Routing
+https://en.wikipedia.org/wiki/Load_balancing_(computing)
+https://en.wikipedia.org/wiki/Content_delivery_network
+https://en.wikipedia.org/wiki/Virtual_private_network
+https://en.wikipedia.org/wiki/Proxy_server
+https://en.wikipedia.org/wiki/Firewall_(computing)
+
+# Security
+https://en.wikipedia.org/wiki/Computer_security
+https://en.wikipedia.org/wiki/Cryptography
+https://en.wikipedia.org/wiki/Encryption
+https://en.wikipedia.org/wiki/Public-key_cryptography
+https://en.wikipedia.org/wiki/Transport_Layer_Security
+https://en.wikipedia.org/wiki/Hash_function
+https://en.wikipedia.org/wiki/SHA-2
+https://en.wikipedia.org/wiki/MD5
+https://en.wikipedia.org/wiki/Digital_signature
+https://en.wikipedia.org/wiki/Authentication
+https://en.wikipedia.org/wiki/Authorization
+https://en.wikipedia.org/wiki/Multi-factor_authentication
+https://en.wikipedia.org/wiki/SQL_injection
+https://en.wikipedia.org/wiki/Cross-site_scripting
+https://en.wikipedia.org/wiki/Cross-site_request_forgery
+https://en.wikipedia.org/wiki/Denial-of-service_attack
+https://en.wikipedia.org/wiki/Malware
+https://en.wikipedia.org/wiki/Ransomware
+https://en.wikipedia.org/wiki/Phishing
+https://en.wikipedia.org/wiki/Penetration_test
+https://en.wikipedia.org/wiki/Zero-day_(computing)
+
+# -----------------------------------------------------------------------------
+# HARDWARE & ARCHITECTURE
+# -----------------------------------------------------------------------------
+
+# Computer Architecture
+https://en.wikipedia.org/wiki/Computer_architecture
+https://en.wikipedia.org/wiki/Central_processing_unit
+https://en.wikipedia.org/wiki/Graphics_processing_unit
+https://en.wikipedia.org/wiki/Random-access_memory
+https://en.wikipedia.org/wiki/Solid-state_drive
+https://en.wikipedia.org/wiki/Hard_disk_drive
+https://en.wikipedia.org/wiki/Cache_(computing)
+https://en.wikipedia.org/wiki/Instruction_set_architecture
+https://en.wikipedia.org/wiki/X86
+https://en.wikipedia.org/wiki/ARM_architecture_family
+https://en.wikipedia.org/wiki/RISC-V
+https://en.wikipedia.org/wiki/Parallel_computing
+https://en.wikipedia.org/wiki/Multi-core_processor
+
+# Embedded Systems
+https://en.wikipedia.org/wiki/Embedded_system
+https://en.wikipedia.org/wiki/Microcontroller
+https://en.wikipedia.org/wiki/Arduino
+https://en.wikipedia.org/wiki/Raspberry_Pi
+https://en.wikipedia.org/wiki/Internet_of_things
+https://en.wikipedia.org/wiki/Field-programmable_gate_array
+
+# Quantum Computing
+https://en.wikipedia.org/wiki/Quantum_computing
+https://en.wikipedia.org/wiki/Qubit
+https://en.wikipedia.org/wiki/Quantum_algorithm
+https://en.wikipedia.org/wiki/Quantum_supremacy
+
+# -----------------------------------------------------------------------------
+# SCIENCE & TECHNOLOGY
+# -----------------------------------------------------------------------------
+
+# Physics
+https://en.wikipedia.org/wiki/Physics
+https://en.wikipedia.org/wiki/Quantum_mechanics
+https://en.wikipedia.org/wiki/Theory_of_relativity
+https://en.wikipedia.org/wiki/Electromagnetism
+https://en.wikipedia.org/wiki/Thermodynamics
+https://en.wikipedia.org/wiki/Nuclear_physics
+https://en.wikipedia.org/wiki/Particle_physics
+https://en.wikipedia.org/wiki/Standard_Model
+
+# Chemistry
+https://en.wikipedia.org/wiki/Chemistry
+https://en.wikipedia.org/wiki/Organic_chemistry
+https://en.wikipedia.org/wiki/Biochemistry
+https://en.wikipedia.org/wiki/Molecular_biology
+
+# Biology
+https://en.wikipedia.org/wiki/Biology
+https://en.wikipedia.org/wiki/Genetics
+https://en.wikipedia.org/wiki/DNA
+https://en.wikipedia.org/wiki/Evolution
+https://en.wikipedia.org/wiki/Neuroscience
+https://en.wikipedia.org/wiki/Bioinformatics
+https://en.wikipedia.org/wiki/CRISPR
+
+# Space
+https://en.wikipedia.org/wiki/Astronomy
+https://en.wikipedia.org/wiki/Astrophysics
+https://en.wikipedia.org/wiki/Space_exploration
+https://en.wikipedia.org/wiki/SpaceX
+https://en.wikipedia.org/wiki/NASA
+https://en.wikipedia.org/wiki/International_Space_Station
+
+# Energy
+https://en.wikipedia.org/wiki/Renewable_energy
+https://en.wikipedia.org/wiki/Solar_energy
+https://en.wikipedia.org/wiki/Wind_power
+https://en.wikipedia.org/wiki/Nuclear_power
+https://en.wikipedia.org/wiki/Electric_vehicle
+https://en.wikipedia.org/wiki/Battery_(electricity)
+
+# Robotics
+https://en.wikipedia.org/wiki/Robotics
+https://en.wikipedia.org/wiki/Autonomous_robot
+https://en.wikipedia.org/wiki/Industrial_robot
+https://en.wikipedia.org/wiki/Self-driving_car
+
+# -----------------------------------------------------------------------------
+# MATHEMATICS
+# -----------------------------------------------------------------------------
+
+# Core
+https://en.wikipedia.org/wiki/Mathematics
+https://en.wikipedia.org/wiki/Algebra
+https://en.wikipedia.org/wiki/Linear_algebra
+https://en.wikipedia.org/wiki/Calculus
+https://en.wikipedia.org/wiki/Differential_equation
+https://en.wikipedia.org/wiki/Statistics
+https://en.wikipedia.org/wiki/Probability_theory
+https://en.wikipedia.org/wiki/Number_theory
+https://en.wikipedia.org/wiki/Geometry
+https://en.wikipedia.org/wiki/Topology
+https://en.wikipedia.org/wiki/Graph_theory
+https://en.wikipedia.org/wiki/Combinatorics
+https://en.wikipedia.org/wiki/Set_theory
+https://en.wikipedia.org/wiki/Logic
+
+# Applied
+https://en.wikipedia.org/wiki/Numerical_analysis
+https://en.wikipedia.org/wiki/Optimization_(mathematics)
+https://en.wikipedia.org/wiki/Information_theory
+https://en.wikipedia.org/wiki/Game_theory
+https://en.wikipedia.org/wiki/Cryptanalysis
+
+# -----------------------------------------------------------------------------
+# BUSINESS & TECHNOLOGY
+# -----------------------------------------------------------------------------
+
+https://en.wikipedia.org/wiki/Startup_company
+https://en.wikipedia.org/wiki/Venture_capital
+https://en.wikipedia.org/wiki/Silicon_Valley
+https://en.wikipedia.org/wiki/Big_Tech
+https://en.wikipedia.org/wiki/Open_source
+https://en.wikipedia.org/wiki/Free_software
+https://en.wikipedia.org/wiki/Software_as_a_service
+https://en.wikipedia.org/wiki/Platform_as_a_service
+https://en.wikipedia.org/wiki/Infrastructure_as_a_service
+https://en.wikipedia.org/wiki/Fintech
+https://en.wikipedia.org/wiki/Cryptocurrency
+https://en.wikipedia.org/wiki/Bitcoin
+https://en.wikipedia.org/wiki/Ethereum
+https://en.wikipedia.org/wiki/Blockchain
+https://en.wikipedia.org/wiki/Smart_contract
+https://en.wikipedia.org/wiki/NFT
+
+# -----------------------------------------------------------------------------
+# FAMOUS TECH COMPANIES & PRODUCTS
+# -----------------------------------------------------------------------------
+
+https://en.wikipedia.org/wiki/Google
+https://en.wikipedia.org/wiki/Apple_Inc.
+https://en.wikipedia.org/wiki/Microsoft
+https://en.wikipedia.org/wiki/Amazon_(company)
+https://en.wikipedia.org/wiki/Meta_Platforms
+https://en.wikipedia.org/wiki/Netflix
+https://en.wikipedia.org/wiki/Tesla,_Inc.
+https://en.wikipedia.org/wiki/NVIDIA
+https://en.wikipedia.org/wiki/Intel
+https://en.wikipedia.org/wiki/AMD
+https://en.wikipedia.org/wiki/IBM
+https://en.wikipedia.org/wiki/Oracle_Corporation
+https://en.wikipedia.org/wiki/Salesforce
+https://en.wikipedia.org/wiki/Adobe_Inc.
+https://en.wikipedia.org/wiki/Spotify
+https://en.wikipedia.org/wiki/Uber
+https://en.wikipedia.org/wiki/Airbnb
+https://en.wikipedia.org/wiki/OpenAI
+https://en.wikipedia.org/wiki/DeepMind
+
+# -----------------------------------------------------------------------------
+# HISTORY OF COMPUTING
+# -----------------------------------------------------------------------------
+
+https://en.wikipedia.org/wiki/History_of_computing
+https://en.wikipedia.org/wiki/ENIAC
+https://en.wikipedia.org/wiki/Alan_Turing
+https://en.wikipedia.org/wiki/John_von_Neumann
+https://en.wikipedia.org/wiki/Grace_Hopper
+https://en.wikipedia.org/wiki/Dennis_Ritchie
+https://en.wikipedia.org/wiki/Ken_Thompson
+https://en.wikipedia.org/wiki/Linus_Torvalds
+https://en.wikipedia.org/wiki/Tim_Berners-Lee
+https://en.wikipedia.org/wiki/Steve_Jobs
+https://en.wikipedia.org/wiki/Bill_Gates
+https://en.wikipedia.org/wiki/Elon_Musk
+https://en.wikipedia.org/wiki/Jeff_Bezos
+https://en.wikipedia.org/wiki/Mark_Zuckerberg
